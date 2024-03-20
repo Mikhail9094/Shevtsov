@@ -1,0 +1,45 @@
+@import "../../../sass/variables.scss";
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-montserrat;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+
+  @media (max-width: $breakpoint_xl) {
+    border-radius: 50%;
+  }
+
+  .burger {
+    display: none;
+    border-radius: 50%;
+
+    @media (max-width: $breakpoint_xl) {
+      display: block;
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: 30px;
+
+    &__link {
+      transition: all 0.2s;
+      color: $main-color;
+
+      &:hover {
+        opacity: 0.8;
+      }
+      &:active {
+        color: #5e9de4;
+      }
+    }
+
+    @media (max-width: $breakpoint_xl) {
+      display: none;
+    }
+  }
+}

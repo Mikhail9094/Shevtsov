@@ -1,0 +1,261 @@
+@import "../../sass/variables.scss";
+
+.form {
+  width: 505px;
+  height: fit-content;
+
+  @media (max-width: $breakpoint_tablet) {
+    width: 360px;
+
+    @media (max-width: $breakpoint_phone) {
+      width: 260px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 66px;
+    padding-left: 15px;
+    font-size: 50px;
+    font-family: $font-raleway;
+    font-weight: 600;
+    line-height: 74.4px;
+    word-wrap: break-word;
+
+    @media (max-width: $breakpoint_tablet) {
+      width: 295px;
+      margin-bottom: 52px;
+      padding-left: 0px;
+      font-size: 30px;
+      line-height: 39.76px;
+
+      @media (max-width: $breakpoint_phone) {
+        width: 195px;
+        margin-bottom: 49px;
+        padding-left: 0px;
+        font-size: 20px;
+        line-height: 29.76px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+
+    @media (max-width: $breakpoint_tablet) {
+      gap: 52px;
+
+      @media (max-width: $breakpoint_phone) {
+        gap: 44px;
+      }
+    }
+
+    & input[type="text"] {
+      padding: 0 2px;
+      width: 480px;
+      height: 36px;
+      border-bottom: 1px rgba(255, 255, 255, 0.8) solid;
+
+      background: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 20px;
+      font-family: Montserrat;
+      font-weight: 400;
+      line-height: 24.56px;
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-transition-delay: 9999s;
+      }
+
+      @media (max-width: $breakpoint_tablet) {
+        font-size: 18px;
+        width: 350px;
+        height: 26px;
+
+        @media (max-width: $breakpoint_phone) {
+          font-size: 16px;
+          width: 250px;
+          height: 20px;
+        }
+      }
+
+      &::placeholder {
+        opacity: 0.6;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 20px;
+        font-family: $font-montserrat;
+        font-weight: 400;
+        line-height: 24.56px;
+
+        @media (max-width: $breakpoint_tablet) {
+          font-size: 18px;
+          line-height: 18.74px;
+
+          @media (max-width: $breakpoint_phone) {
+            font-size: 12px;
+            line-height: 14.74px;
+          }
+        }
+      }
+    }
+  }
+
+  &__privacy {
+    width: 395px;
+    display: block;
+    position: relative;
+    padding-left: 53px;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    margin: 109px 0 89px 0;
+
+    font-size: 16px;
+    font-family: $font-montserrat;
+    font-weight: 400;
+    line-height: 20.61px;
+    letter-spacing: 0.56px;
+
+    @media (max-width: $breakpoint_tablet) {
+      margin: 60px 0 80px 0;
+      width: 331px;
+      padding-left: 40px;
+      font-size: 14px;
+
+      @media (max-width: $breakpoint_phone) {
+        margin: 30px 0 55px 0;
+        width: 251px;
+        padding-left: 32px;
+
+        opacity: 0.7;
+        font-size: 12px;
+        line-height: 15.46px;
+        letter-spacing: 0.42px;
+      }
+    }
+
+    & input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+
+      &:checked ~ span:after {
+        display: block;
+      }
+      &:checked ~ span::before {
+        display: block;
+      }
+    }
+
+    & span {
+      position: absolute;
+      top: calc(50% - 15px);
+      left: 0;
+      height: 30px;
+      width: 30px;
+      border: 1px solid #fff;
+
+      @media (max-width: $breakpoint_tablet) {
+        top: calc(50% - 10px);
+        height: 20px;
+        width: 20px;
+
+        @media (max-width: $breakpoint_phone) {
+          top: 0;
+          height: 15px;
+          width: 15px;
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        right: 7px;
+
+        top: 0px;
+        width: 10px;
+        height: 22px;
+        border: solid white;
+        border-width: 0 1px 0px 0;
+        -webkit-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+        transform: rotate(30deg);
+
+        @media (max-width: $breakpoint_tablet) {
+          left: 5px;
+          top: 0px;
+          width: 9px;
+          height: 16px;
+
+          @media (max-width: $breakpoint_phone) {
+            left: 5px;
+
+            width: 5px;
+            height: 11px;
+          }
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: none;
+
+        bottom: 0px;
+        width: 10px;
+        height: 22px;
+        border: solid white;
+        border-width: 0 1px 0px 0;
+        -webkit-transform: rotate(-30deg);
+        -ms-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+
+        @media (max-width: $breakpoint_tablet) {
+          right: 12px;
+          top: 4px;
+          width: 9px;
+          height: 16px;
+
+          @media (max-width: $breakpoint_phone) {
+            right: 8px;
+            top: 2px;
+            width: 6px;
+            height: 11px;
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    width: 380px;
+    height: 71px;
+
+    @media (max-width: $breakpoint_tablet) {
+      width: 340px;
+      height: 60px;
+
+      font-size: 16px;
+      line-height: 24.19px;
+
+      @media (max-width: $breakpoint_phone) {
+        width: 251px;
+        height: 47px;
+
+        font-size: 14px;
+        line-height: 17.19px;
+      }
+    }
+  }
+}

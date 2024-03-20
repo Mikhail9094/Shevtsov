@@ -1,0 +1,28 @@
+@import "../../sass/variables.scss";
+
+.description {
+  min-width: 53px;
+  width: 50%;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  border-left: 1px solid rgba(255, 255, 255, 0.61);
+
+  &__data {
+    font-size: 40px;
+    font-family: $font-montserrat;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 56.52px;
+  }
+
+  &__text {
+    color: $secondary-color;
+    font-size: 16px;
+    font-family: $font-raleway;
+    font-weight: 400;
+    line-height: 19.65px;
+  }
+}

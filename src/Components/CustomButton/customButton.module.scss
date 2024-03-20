@@ -1,0 +1,48 @@
+@import "../../sass/variables.scss";
+
+.button {
+  position: relative;
+  min-width: 126px;
+  width: 50%;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #fff;
+
+  font-size: 18px;
+  font-family: $font-raleway;
+  font-weight: 600;
+  line-height: 22.1px;
+
+  &__text {
+    width: 80%;
+    color: inherit;
+  }
+
+  .line {
+    border: 1px solid #fff;
+    height: 100%;
+  }
+
+  &__img {
+    position: relative;
+    min-width: 20%;
+    height: 100%;
+
+    & img {
+      right: 18%;
+      bottom: 18%;
+      position: absolute;
+      width: 27%;
+      height: 27%;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}

@@ -1,0 +1,56 @@
+@import "../../../sass/variables.scss";
+
+.data {
+  display: flex;
+  gap: 40px;
+
+  @media (max-width: $breakpoint_tablet) {
+    @media (max-width: $breakpoint_phone) {
+      gap: 30px;
+    }
+  }
+
+  .description {
+    @media (max-width: $breakpoint_xl) {
+      gap: 2px;
+
+      @media (max-width: $breakpoint_phone) {
+        padding: 0 8px;
+      }
+    }
+  }
+
+  .data-description {
+    @media (max-width: $breakpoint_xl) {
+      font-size: 35px;
+      line-height: 40.52px;
+
+      @media (max-width: $breakpoint_tablet) {
+        font-size: 30px;
+        line-height: 35.52px;
+
+        @media (max-width: $breakpoint_phone) {
+          font-size: 16px;
+          line-height: 22.61px;
+        }
+      }
+    }
+  }
+
+  .text-description {
+    @media (max-width: $breakpoint_xl) {
+      font-size: 15px;
+      line-height: 17.65px;
+
+      @media (max-width: $breakpoint_tablet) {
+        font-size: 14px;
+        line-height: 17.28px;
+
+        @media (max-width: $breakpoint_phone) {
+          font-size: 10px;
+          line-height: 12.28px;
+        }
+      }
+    }
+  }
+}

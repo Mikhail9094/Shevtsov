@@ -1,0 +1,103 @@
+@import "../../sass/variables.scss";
+
+$size-button-close: 30px;
+$size-button-close-media: 20px;
+
+.backdrop {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 29, 69, 0.6);
+  overflow-x: hidden;
+  transform: translateX(-100%);
+  opacity: 1;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+
+.modal {
+  width: 612px;
+  height: 100%;
+  padding: 70px 70px 40px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: end;
+  background: #0f1d45;
+
+  transition: 0.3s;
+  transform: translateX(-100%);
+  z-index: 101;
+
+  @media (max-width: $breakpoint_tablet) {
+    width: 100%;
+    padding: 44px 44px 34px 34px;
+    justify-content: center;
+
+    @media (max-width: $breakpoint_phone) {
+      justify-content: start;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: $size-button-close;
+    height: $size-button-close;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity ease 0.2s;
+
+    @media (max-width: $breakpoint_tablet) {
+      top: 24px;
+      right: 24px;
+      width: $size-button-close-media;
+      height: $size-button-close-media;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: calc($size-button-close * 1.414 - 3px);
+      height: 2px;
+      background: rgba(255, 255, 255, 0.8);
+
+      @media (max-width: $breakpoint_tablet) {
+        width: calc($size-button-close-media * 1.414 - 3px);
+      }
+    }
+
+    &::before {
+      left: 2px;
+      top: 0.5px;
+      transform: rotate(45deg);
+      transform-origin: 0 0;
+    }
+
+    &::after {
+      left: 0px;
+      bottom: 0px;
+      transform: rotate(-45deg);
+      transform-origin: 0 0;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.active {
+  transform: translateX(0%);
+}

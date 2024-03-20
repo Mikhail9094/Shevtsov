@@ -1,0 +1,26 @@
+@import "../../sass/variables.scss";
+
+.layout {
+  margin: 0 auto;
+  max-width: 1320px;
+  height: 100%;
+
+  .wrapper {
+    height: 100%;
+    margin: 0 15px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    background: url("../../../public/img/layout-background.svg");
+    background-size: 100%;
+    background-position: center center;
+
+    @media (max-width: $breakpoint_phone) {
+      padding-top: 20px;
+    }
+  }
+
+  .content {
+    flex: 1;
+  }
+}

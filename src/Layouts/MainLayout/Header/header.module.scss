@@ -1,0 +1,72 @@
+@import "../../../sass/variables.scss";
+
+.header {
+  height: 40px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 8fr 2fr;
+  gap: 30px;
+
+  @media (max-width: $breakpoint_xl) {
+    grid-template-columns: 1fr 40px 40px;
+    gap: 10px;
+  }
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media (max-width: $breakpoint_xl) {
+      gap: 10px;
+      justify-content: end;
+    }
+  }
+
+  &__logo {
+    padding: 8px 0;
+    display: flex;
+    width: max-content;
+    border-top: 1px solid $main-color;
+    border-bottom: 1px solid $main-color;
+
+    @media (max-width: $breakpoint_phone) {
+      padding: 0;
+      width: 96px;
+      height: 19px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+
+    & span {
+      @media (max-width: $breakpoint_xl) {
+        display: none;
+      }
+    }
+  }
+
+  &__contacts-button {
+    border-radius: 50%;
+    width: max-content;
+
+    & img {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
